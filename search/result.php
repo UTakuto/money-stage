@@ -10,7 +10,7 @@
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="w-screen h-screen">
+<body class="w-screen h-screen bg-gray-100 dark:bg-gray-800">
     <h1>結果</h1>
 
     <div class="w-[80%] h-[20%] m-auto overflow-x-auto">
