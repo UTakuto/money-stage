@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <main class="p-10 flex flex-col items-center justify-center">
+    <main class="w-screen h-screen m-auto flex flex-col items-center justify-center">
         <h1>あなたのことを教えてください！</h1>
         <form action="store.php" method="POST" class="w-[20%] mx-auto">
             <div class="pt-[15px]">
