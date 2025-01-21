@@ -3,13 +3,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>money-stage</title>
-    <!-- tailwindcss -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<?php require __DIR__ . "/components/head.php" ?>
 <body class="w-screen h-screen bg-gray-100 dark:bg-gray-800">
     <h1>結果</h1>
 
