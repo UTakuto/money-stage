@@ -10,9 +10,22 @@
     <!-- tailwindcss -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="w-svw h-svh bg-[#fffff5]">
+
+    <header class="w-full h-[10vh]">
+        <nav class="h-[8vh] bg-[#072942] text-[#fefefe]">
+            <div class="h-full flex justify-start items-center pl-[20px] ">
+                <div>
+                    <a href="#" class="flex justify-center items-center gap-[10px] w-full h-[8vh] text-lg font-bold">
+                        <img class="w-[50px] h-fit" src="./img/logo.png" alt="">
+                        <img class="w-[200px] h-fit pt-[8px] " src="./img/title_white.png" alt="マネステージ">
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
     
-    <main class="w-screen h-screen m-auto flex flex-col items-center justify-center">
+    <main class="w-full h-[90vh] m-auto flex flex-col items-center justify-center">
         <h1>あなたのことを教えてください！</h1>
         <form action="store.php" method="POST" class="w-[20%] mx-auto">
             <div class="pt-[15px]">
@@ -65,7 +78,7 @@
                 </ul>
             </div>
             <div class="pt-[10px]">
-                <label for="" class="block text-sm font-medium text-gray-900">住まいのタイプ</label>
+                <label for="housing" class="block text-sm font-medium text-gray-900">住まいのタイプ</label>
                 <ul class="text-sm font-medium text-gray-900 bg-[#fdfdfd] border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                         <div class="flex items-center ps-3">
