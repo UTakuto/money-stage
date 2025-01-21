@@ -16,22 +16,22 @@
         <h1>あなたのことを教えてください！</h1>
         <form action="store.php" method="POST" class="w-[20%] mx-auto">
             <div class="pt-[15px]">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">名前</label>
+                <label for="name" class="block text-sm font-medium text-gray-900">名前</label>
                 <input type="text" name="name" id="name" placeholder="山田太郎" required class="bg-[#fdfdfd] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
-            <div class="pt-[8px]">
-                <label for="age" class="block mb-2 text-sm font-medium text-gray-900">年齢</label>
+            <div class="pt-[10px]">
+                <label for="age" class="block text-sm font-medium text-gray-900">年齢</label>
                 <input type="text" name="age" id="age" placeholder="21" required class="bg-[#fdfdfd] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
-            <div class="pt-[8px]">
+            <div class="pt-[10px]">
                 <div class="flex justify-start items-end">
                         <label for="income" class="block text-sm font-medium text-gray-900">年収</label>
                         <p class="text-[12px] text-gray-500 pl-[5px]">1万単位</p>
                 </div>
                 <input type="text" name="income" id="income" placeholder="300" required class="bg-[#fdfdfd] border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
             </div>
-            <div class="pt-[8px]">
-                <label for="marriage" class="block mb-2 text-sm font-medium text-gray-900">婚姻の有無</label>
+            <div class="pt-[10px]">
+                <label for="marriage" class="block text-sm font-medium text-gray-900">婚姻の有無</label>
                 <ul class="text-sm font-medium text-gray-900 bg-[#fdfdfd] border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                         <div class="flex items-center ps-3">
@@ -47,8 +47,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="pt-[8px]">
-                <label for="children" class="block mb-2 text-sm font-medium text-gray-900">こどもの有無</label>
+            <div class="pt-[10px]">
+                <label for="children" class="block text-sm font-medium text-gray-900">こどもの有無</label>
                 <ul class="text-sm font-medium text-gray-900 bg-[#fdfdfd] border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                         <div class="flex items-center ps-3">
@@ -64,8 +64,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="pt-[8px]">
-                <label for="" class="block mb-2 text-sm font-medium text-gray-900">住まいのタイプ</label>
+            <div class="pt-[10px]">
+                <label for="" class="block text-sm font-medium text-gray-900">住まいのタイプ</label>
                 <ul class="text-sm font-medium text-gray-900 bg-[#fdfdfd] border border-gray-300 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                         <div class="flex items-center ps-3">
