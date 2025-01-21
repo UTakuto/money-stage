@@ -2,7 +2,7 @@
 
 ?>
 <header class="w-full h-[10vh]">
-    <nav class="h-[10vh] bg-[#094e80] text-[#fefefe]">
+    <nav class="h-[10vh] bg-[#062940] text-[#fefefe]">
         <div class="h-full flex justify-start items-center pl-[20px] ">
             <div>
                 <a href="#" class="flex justify-center items-center gap-[10px] w-full h-[8vh] text-lg font-bold">
