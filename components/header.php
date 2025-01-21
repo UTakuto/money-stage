@@ -6,7 +6,7 @@
         <div class="h-full flex justify-start items-center pl-[20px] ">
             <div>
                 <a href="#" class="flex justify-center items-center gap-[10px] w-full h-[8vh] text-lg font-bold">
-                    <img class="w-[100px] h-fit" src="./img/logo1.png" alt="マネステージロゴ">
+                    <img class="w-[80px] h-fit" src="./img/logo_white.png" alt="マネステージロゴ">
                     <img class="w-[200px] h-fit pt-[8px] " src="./img/title_white.png" alt="マネステージ">
                 </a>
             </div>
