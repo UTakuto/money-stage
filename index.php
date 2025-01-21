@@ -3,19 +3,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>money-stage</title>
-    <!-- tailwindcss -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<?php require __DIR__ . "/components/head.php" ?>
 <body class="w-svw h-svh bg-[#fffff5]">
 
     <?php require __DIR__ . "/components/header.php"  ?>
     
-    <main class="w-full h-[90vh] m-auto flex flex-col items-center justify-center">
-        <h1 class=" font-bold ">あなたのことを教えてください！</h1>
+    <main class="w-full h-[90svh] mt-[40px] flex flex-col items-center justify-center ">
+        <h1 class="font-bold  ">あなたのことを教えてください！</h1>
         <form action="store.php" method="POST" class="w-[20%] mx-auto">
             <div class="pt-[15px]">
                 <label for="name" class="block text-sm font-medium text-gray-900">名前</label>
@@ -97,7 +91,7 @@
                 <!-- <input type="text" name="" id="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"> -->
             </div> 
             <div class="flex justify-center">
-                <button type="submit" class="inline-block rounded-md bg-slate-800 py-2 px-6 my-6 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                <button type="submit" class="inline-block rounded-md bg-slate-800 py-2 px-6 my-8 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                     登録
                 </button>
             </div>
