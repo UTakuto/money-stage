@@ -44,14 +44,14 @@ try{
     // トランザクション開始
     $db->beginTransaction();
 
-    $resultTable = TB_RESULT;
+    $profileTable = TB_PROFILE;
 
-    $resultSql ="
-        INSERT INTO {$resultTable} (name, age, income, marriage, children, housing)
+    $profileSql ="
+        INSERT INTO {$profileTable} (name, age, income, marriage, children, housing)
         VALUES (:name, :age, :income, :marriage, :children, :housing)
     ";
 
-    $stmt = $db->prepare($resultSql);
+    $stmt = $db->prepare($profileSql);
     $stmt -> execute(
         [
             "name"     => $name,
@@ -65,6 +65,10 @@ try{
 
     // コミット
     $db->commit();
+
+    // 成功したらresult.phpへリダイレクト
+    header('Location: result.php');
+    exit();
 }
 catch(PDOException $error){
     print $error->getMessage() . ">>>" . $stmt->queryString;

@@ -1,12 +1,19 @@
+#プロフィールテーブル
+
 DROP TABLE IF EXISTS money_profile;
 
-# profiles create
-CREATE TABLE money_profile( 
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY ,    # 主キー
-    name VARCHAR(255) NOT NULL ,                    # 作者名
-    email VARCHAR(255) NOT NULL ,                   # メールアドレス
-    about TEXT ,                                    # 自己紹介
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, # 作成日時
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
-                ON UPDATE CURRENT_TIMESTAMP         # 更新日時
- ) ENGINE = INNODB;
+CREATE TABLE money_profile (
+    id          SERIAL PRIMARY KEY,                            # 主キー
+    name        VARCHAR(255) NOT NULL,                         # 名前
+    age         TINYINT UNSIGNED NOT NULL,                     # 年齢
+    income      INT UNSIGNED NOT NULL,                         # 収入
+    marriage    TINYINT UNSIGNED DEFAULT 1,                    # 結婚(1:結婚, 2:未婚)
+    children    TINYINT UNSIGNED DEFAULT 1,                    # 子供(1:有, 2:無)
+    housing     TINYINT UNSIGNED DEFAULT 1,                    # 住宅(1:賃貸, 2:持ち家, 3:社宅・寮, 4:その他)
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,           # 作成日時
+    updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+                ON UPDATE CURRENT_TIMESTAMP                    # 更新日時
+)ENGINE = INNODB;
+
+INSERT INTO money_profile (name, age, income, marriage, children, housing) VALUES
+('山田太郎', 28, 350, 2, 2, 1), 
