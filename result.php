@@ -97,7 +97,7 @@ try {
 
     <div class="flex items-center justify-center gap-8 mb-4">
         <div class="flex items-center gap-2">
-            <div class="w-4 h-4 bg-[#FF0000] rounded-full"></div>
+            <div class="w-4 h-4 bg-[#d61818] rounded-full"></div>
             <span class="text-sm text-gray-600">現在のステージ</span>
         </div>
         <div class="flex items-center gap-2">
@@ -111,11 +111,11 @@ try {
             <?php foreach ($lifeStages as $stageName => $stageInfo): ?>
                 <li class="w-fit relative mb-6 sm:mb-0 <?= isset($stageInfo['current']) && $stageInfo['current'] ? 'h-[55%]' : '' ?>">
                     <div class="w-full flex items-center">
-                        <div class="z-10 flex items-center justify-center w-6 h-6 <?= isset($stageInfo['current']) && $stageInfo['current'] ? 'bg-[#FF0000]' : 'bg-[#FFD700]' ?> rounded-full shrink-0"></div>
+                        <div class="z-10 flex items-center justify-center w-6 h-6 <?= isset($stageInfo['current']) && $stageInfo['current'] ? 'bg-[#d61818]' : 'bg-[#FFD700]' ?> rounded-full shrink-0"></div>
                         <div class="hidden sm:flex w-[100%] bg-gray-200 h-0.5 dark:bg-gray-700"></div>
                     </div>
                     <div class="mt-3 sm:pe-8">
-                        <h3 class="text-lg font-semibold <?= isset($stageInfo['current']) && $stageInfo['current'] ? 'text-[#FF0000]' : 'text-gray-900' ?> dark:text-white">
+                        <h3 class="text-lg font-semibold <?= isset($stageInfo['current']) && $stageInfo['current'] ? 'text-[#d61818]' : 'text-gray-900' ?> dark:text-white">
                             <?= htmlspecialchars($stageName) ?>
                             <?php if (isset($stageInfo['age'])): ?>
                                 <span class="text-sm">(<?= htmlspecialchars($stageInfo['age']) ?>歳)</span>
@@ -204,6 +204,8 @@ try {
             </div>
         <?php endforeach; ?>
     </div>
+
+    <?php require __DIR__ . "/components/footer.php"  ?>
 
     <script src="./js/result.js"></script>
 </body>
