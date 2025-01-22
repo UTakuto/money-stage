@@ -44,6 +44,7 @@
             <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('子育て')">子育て</button>
             <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('住宅')">住宅</button>
             <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('教育')">教育</button>
+            <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('医療')">医療</button>
             <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('大学生')">大学生</button>
             <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('高校生')">高校生</button>
             <button type="button" class="px-3 py-1 text-sm text-gray-700 bg-gray-100 rounded-full hover:bg-gray-200" onclick="setSearchKeyword('中学生')">中学生</button>
