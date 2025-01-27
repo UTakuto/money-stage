@@ -6,8 +6,7 @@ try {
     $db = new PDO(DB_DSN, DB_USER, DB_PASS);
     
     // プロフィールデータを取得
-    $userId = $_GET['id'] ?? $_SESSION['user_id'];
-    $sql = "SELECT * FROM " . TB_PROFILE . " WHERE id = :user_id";
+    $sql = "SELECT * FROM " . TB_PROFILE . " ORDER BY id DESC LIMIT 1";
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $profile = $stmt->fetch(PDO::FETCH_ASSOC);
