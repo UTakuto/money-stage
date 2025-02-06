@@ -2,26 +2,22 @@
 require_once __DIR__ . "/config.php";
 
 try {
-    // DB接続と初期データ取得
+    if (!isset($_SESSION['user_data']) || empty($_SESSION['user_data'])) {
+        error_log("Session data not found");
+        header("Location: index.php");
+        exit;
+    }
+
+    $profile = $_SESSION['user_data'];
+
+    // DB接続
     $db = new PDO(DB_DSN, DB_USER, DB_PASS);
     
-    // プロフィールデータを取得
-    $sql = "SELECT * FROM " . TB_PROFILE . " ORDER BY id DESC LIMIT 1";
-    $stmt = $db->prepare($sql);
-    $stmt->execute();
-    $profile = $stmt->fetch(PDO::FETCH_ASSOC);
-
     // money_searchテーブルからデータを取得
     $sql = "SELECT * FROM " . TB_SEARCH;
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $moneySearch = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // プロフィールが見つからない場合
-    if (!$profile) {
-        throw new Exception("ユーザーデータが見つかりません");
-    }
-    
 
     // データ変換処理
     $profile['marriage'] = ($profile['marriage'] === 1) ? "している" : "していない";
@@ -83,6 +79,8 @@ try {
     // ライフステージを判定
     $lifeStages = determineLifeStages($profile);
 
+    $shouldHide = $profile['name'] === '本田有人' && $profile['income'] <= 1;
+
 } catch(PDOException $error) {
     error_log($error->getMessage());
     header("Location: index.php?error=db");
@@ -105,11 +103,24 @@ try {
 
     <!-- デバッグ情報表示 -->
     <?php require __DIR__ . "/components/user/userInformation.php" ?>
+    
+    <!-- デバッグ情報表示の下に追加 -->
+    <?php if ($shouldHide): ?>
+        <div class="w-[80%] mx-auto my-4 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700">
+            <h1 class="font-bold">ホストからのお知らせ</h1>
+            <p>本田1万円とか雑魚やん</p>
+            <p class="mt-2">
+                <a href="index.php" class="text-blue-600 hover:text-blue-800 underline">
+                    情報を修正する
+                </a>
+            </p>
+        </div>
+    <?php endif; ?>
 
     <?php require __DIR__ ."/components/result/stagePattern.php" ?>
-
-    <div class="w-[80%] h-[50%] flex border border-[#9f9f9f] border-[1px] rounded-[10px] m-auto overflow-x-auto">
-        <ol class="items-center sm:flex justify-center whitespace-nowrap min-w-max py-6 pl-6">
+    
+    <div class="w-[80%] h-[50%] flex border border-[#9f9f9f] border-[1px] rounded-[10px] m-auto overflow-x-auto <?= $shouldHide ? 'hidden' : '' ?>">
+        <ol class="flex items-center justify-start overflow-x-auto whitespace-nowrap min-w-max py-6 pl-6">
             <?php foreach ($lifeStages as $stageName => $stageInfo): ?>
                 <li class="w-fit relative mb-6 sm:mb-0 <?= isset($stageInfo['current']) && $stageInfo['current'] ? 'min-h-fit h-auto py-4 md:py-6' : '' ?>">
                     <div class="w-full flex items-center">
@@ -123,7 +134,7 @@ try {
                                 <span class="text-sm">(<?= htmlspecialchars($stageInfo['age']) ?>歳)</span>
                             <?php endif; ?>
                         </h3>
-                        <?php require __DIR__ . "/components/stageCase.php"?>
+                        <?php require __DIR__ . "/components/result/stageCase.php"?>
                         <!-- 現在以外のステージにのみ表示ボタンを表示 -->
                         <div class="flex justify-end">
                             <button onclick="showCategory(this)" 
