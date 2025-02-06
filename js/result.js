@@ -98,3 +98,12 @@ function showAllCategories() {
         searchInput.value = "";
     }
 }
+
+// トグル
+document.getElementById("toggleUserInfo").addEventListener("click", function () {
+    const content = document.getElementById("userInfoContent");
+    const icon = document.getElementById("toggleIcon");
+
+    content.classList.toggle("hidden");
+    icon.classList.toggle("rotate-180");
+});
