@@ -1,5 +1,3 @@
-#プロフィールテーブル
-
 DROP TABLE IF EXISTS money_profile;
 
 CREATE TABLE money_profile (
@@ -13,7 +11,11 @@ CREATE TABLE money_profile (
     created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,           # 作成日時
     updated_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
                 ON UPDATE CURRENT_TIMESTAMP                    # 更新日時
-)ENGINE = INNODB;
+) ENGINE = INNODB;
 
+-- サンプルデータの挿入
 INSERT INTO money_profile (name, age, income, marriage, children, housing) VALUES
-('山田太郎', 28, 350, 2, 2, 1), 
+('山田太郎', 28, 350, 2, 2, 1),
+('佐藤花子', 32, 420, 1, 1, 2),
+('鈴木一郎', 45, 650, 1, 1, 2),
+('田中美咲', 23, 280, 2, 2, 3);
